@@ -971,17 +971,15 @@ class ASCDocumentsViewController: ASCBaseViewController, UIGestureRecognizerDele
     }
 
     func setEditMode(_ edit: Bool) {
-        ASCViewControllerManager.shared.rootController?.tabBar.isHidden = edit
-
         collectionView.isEditing = edit
         isEditingIndexMode = false
+        selectedIds.removeAll()
 
         configureNavigationBar()
 
         configureToolBar()
         showToolBar(edit)
 
-        selectedIds.removeAll()
         updateTitle()
     }
 
